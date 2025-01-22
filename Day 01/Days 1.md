@@ -25,3 +25,10 @@ AI (Artificial Intelligence) adalah perangkat lunak yang meniru perilaku dan kem
 ## Generative AI
 - Kemampuan AI untuk menciptakan konten orisinal dalam berbagai format seperti teks, gambar, kode, dan lainnya.
 - Contoh: ChatGPT untuk teks, DALL-E untuk gambar.
+
+## Manfaat AI
+AI digunakan di berbagai bidang untuk memberikan dampak positif, seperti:
+- Membantu dokter mendiagnosis penyakit lebih cepat.
+- Meningkatkan efisiensi kerja dengan otomatisasi.
+- Membantu dalam analisis data besar untuk pengambilan keputusan.
+- Memberikan pengalaman pengguna yang personal melalui teknologi pintar.
