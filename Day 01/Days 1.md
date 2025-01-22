@@ -1,16 +1,27 @@
-# Hari Pertama mempelajari Machine Learning
-Modul "Introduction to AI" dari Microsoft Learn menjelaskan bahwa Kecerdasan Buatan (Artificial Intelligence atau AI) adalah perangkat lunak yang meniru perilaku dan kemampuan manusia. AI memungkinkan pengembangan perangkat lunak yang dapat meningkatkan perawatan kesehatan, membantu individu mengatasi keterbatasan fisik, memberdayakan infrastruktur pintar, menciptakan pengalaman hiburan yang luar biasa, dan bahkan menyelamatkan planet ini.
+# Apa itu AI?
 
-Beban kerja utama dalam AI meliputi:
+AI (Artificial Intelligence) adalah perangkat lunak yang meniru perilaku dan kemampuan manusia. Berikut adalah beberapa kemampuan utama dalam AI:
 
-Pembelajaran mesin (Machine learning): Dasar dari sistem AI, di mana model komputer diajarkan untuk membuat prediksi dan menarik kesimpulan dari data.
+## Machine Learning
+- Fondasi dari sistem AI.
+- Proses "mengajarkan" model komputer untuk membuat prediksi dan menarik kesimpulan dari data.
 
-Penglihatan komputer (Computer vision): Kemampuan AI untuk menafsirkan dunia secara visual melalui kamera, video, dan gambar.
+## Computer Vision
+- Kemampuan AI untuk memahami dunia secara visual melalui kamera, video, dan gambar.
+- Contoh: Pengenalan wajah atau deteksi objek.
 
-Pemrosesan bahasa alami (Natural language processing): Kemampuan AI untuk menafsirkan bahasa tertulis atau lisan dan merespons dengan cara yang sama.
+## Natural Language Processing (NLP)
+- Kemampuan AI untuk memahami dan merespons bahasa manusia (baik tertulis maupun lisan).
+- Contoh: Chatbot, asisten virtual.
 
-Kecerdasan dokumen (Document intelligence): Kemampuan AI dalam mengelola, memproses, dan menggunakan volume data yang besar yang ditemukan dalam formulir dan dokumen.
+## Document Intelligence
+- Kemampuan AI untuk mengelola, memproses, dan menggunakan data dalam dokumen atau formulir.
+- Membantu mengotomatisasi tugas-tugas administratif.
 
-Penambangan pengetahuan (Knowledge mining): Kemampuan AI untuk mengekstrak informasi dari volume data besar yang sering tidak terstruktur untuk membuat penyimpanan pengetahuan yang dapat dicari.
+## Knowledge Mining
+- Kemampuan AI untuk mengekstrak informasi dari data besar (sering tidak terstruktur) dan menjadikannya pengetahuan yang dapat dicari.
+- Contoh: Menciptakan basis data yang dapat digunakan untuk pengambilan keputusan.
 
-AI generatif (Generative AI): Kemampuan AI yang menciptakan konten orisinal dalam berbagai format termasuk bahasa alami, gambar, kode, dan lainnya.
+## Generative AI
+- Kemampuan AI untuk menciptakan konten orisinal dalam berbagai format seperti teks, gambar, kode, dan lainnya.
+- Contoh: ChatGPT untuk teks, DALL-E untuk gambar.
