@@ -36,17 +36,46 @@ Pembelajaran mesin (ML) adalah cabang **kecerdasan buatan (AI)** yang menggabung
 ---
 
 ## 📊 Jenis-Jenis Pembelajaran Mesin  
-1. **Supervised Learning** (*Belajar Terbimbing*)  
-   - Data memiliki **label jelas** (contoh: klasifikasi penyakit, prediksi harga rumah).  
-   - **Algoritma**: Regresi Linear, SVM, Neural Network.  
+## Jenis-Jenis Pembelajaran Mesin  
 
-2. **Unsupervised Learning** (*Belajar Tanpa Panduan*)  
-   - Data **tanpa label** → model mencari pola tersembunyi.  
-   - **Contoh**: Pengelompokan pelanggan (*clustering*) berdasarkan kebiasaan belanja.  
+Ada berbagai jenis pembelajaran mesin, dan penting untuk memilih jenis yang tepat sesuai tujuan prediksi. Diagram berikut menampilkan gambaran umum pembelajaran mesin terbimbing (supervised) untuk regresi dan klasifikasi, serta pembelajaran mesin tanpa bimbingan (unsupervised) untuk klasterisasi.  
 
-3. **Reinforcement Learning** (*Belajar Penguatan*)  
-   - Model belajar melalui *trial and error* dengan sistem hadiah/hukuman.  
-   - **Contoh**: Mobil otonom belajar mengemudi di simulasi.  
+### Pembelajaran Mesin Terbimbing (Supervised Machine Learning)  
+Ini adalah istilah umum untuk algoritma pembelajaran mesin di mana data latih memiliki nilai fitur dan label yang sudah diketahui. Tujuannya adalah mempelajari hubungan antara fitur dan label pada data historis, sehingga label yang belum diketahui bisa diprediksi untuk kasus baru.  
+
+#### Regresi  
+Regresi adalah bentuk pembelajaran mesin terbimbing di mana label yang diprediksi berupa nilai numerik. Contohnya:  
+- Memprediksi jumlah es krim yang terjual pada suatu hari berdasarkan suhu, curah hujan, dan kecepatan angin.  
+- Memprediksi harga jual properti berdasarkan luas dalam meter persegi, jumlah kamar, dan kondisi sosial-ekonomi di lokasi tersebut.  
+- Memprediksi efisiensi bahan bakar mobil (km per liter) berdasarkan ukuran mesin, berat, lebar, tinggi, dan panjang kendaraan.  
+
+#### Klasifikasi  
+Klasifikasi adalah bentuk pembelajaran mesin terbimbing di mana label yang diprediksi adalah sebuah kelas atau kategori. Ada dua skenario umum:  
+
+**Klasifikasi Biner**  
+Model memprediksi apakah sebuah item masuk atau tidak masuk ke dalam satu kelas tertentu (dua kemungkinan hasil). Contohnya:  
+- Apakah pasien berisiko mengidap diabetes (berdasarkan berat badan, usia, kadar gula darah, dan lain-lain).  
+- Apakah nasabah bank akan gagal membayar pinjaman (berdasarkan pendapatan, riwayat kredit, usia, dan sebagainya).  
+- Apakah pelanggan akan merespons tawaran pemasaran (berdasarkan atribut demografi dan riwayat pembelian).  
+
+**Klasifikasi Multikelas**  
+Klasifikasi multikelas memperluas klasifikasi biner dengan memprediksi salah satu dari beberapa kelas yang mungkin. Misalnya:  
+- Menentukan spesies penguin (Adelie, Gentoo, atau Chinstrap) berdasarkan ukuran fisik.  
+- Menentukan genre film (komedi, horor, romansa, petualangan, atau fiksi ilmiah) berdasarkan pemeran, sutradara, dan anggaran.  
+
+Dalam skenario multikelas, biasanya hanya satu label akhir yang mungkin (penguin tidak bisa sekaligus Gentoo dan Adelie). Namun, beberapa algoritma juga mendukung klasifikasi multilabel di mana satu observasi bisa memiliki beberapa label (misalnya, film yang bisa dikategorikan sebagai fiksi ilmiah sekaligus komedi).  
+
+### Pembelajaran Mesin Tanpa Bimbingan (Unsupervised Machine Learning)  
+Dalam pembelajaran mesin tanpa bimbingan, model dilatih hanya dengan menggunakan nilai fitur tanpa label yang diketahui. Algoritma akan menemukan hubungan atau pola di antara fitur-fitur tersebut.  
+
+#### Klasterisasi  
+Bentuk paling umum dari pembelajaran mesin tanpa bimbingan adalah klasterisasi. Algoritma klasterisasi mengelompokkan observasi berdasarkan kemiripan fitur. Misalnya:  
+- Mengelompokkan bunga sejenis berdasarkan ukuran, jumlah daun, dan jumlah kelopak.  
+- Mengidentifikasi kelompok pelanggan serupa berdasarkan data demografi dan perilaku pembelian.  
+
+Secara konsep, klasterisasi menyerupai klasifikasi multikelas, namun pada klasterisasi tidak ada label awal. Algoritma murni mengelompokkan observasi sesuai kesamaan fitur.  
+
+Seringkali, hasil klasterisasi digunakan untuk menentukan kelas baru sebelum melatih model klasifikasi. Misalnya, kita bisa mengelompokkan pelanggan berdasarkan kebiasaan belanja, lalu menganalisis hasilnya untuk mengidentifikasi berbagai tipe pelanggan (nilai tinggi - volume rendah, pembeli rutin, dan sebagainya). Data yang telah diberi label kelas tersebut kemudian dapat digunakan untuk melatih model klasifikasi yang memprediksi kategori pelanggan baru di masa mendatang.
 
 ---
 
