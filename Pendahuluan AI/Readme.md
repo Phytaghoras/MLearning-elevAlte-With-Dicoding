@@ -1,5 +1,8 @@
 # Pendahuluan AI
 
+Ini adalah Versi mapsnya , Mohon untuk Membaca Per-bab Terlebih Dahulu sebelum memulai ini 
+
+
 ## Daftar Isi
 1. [Apa itu AI](#apa-itu-ai)
 2. [Machine Learning](#machine-learning)
