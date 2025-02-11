@@ -1,24 +1,87 @@
-# Ringkasan Binary Classification
+# Bab 1: Pendahuluan
 
-Pada binary classification, model dilatih untuk memprediksi salah satu dari dua label (contoh: 0 atau 1) berdasarkan fitur-fitur yang tersedia.  
-Model seperti logistic regression memanfaatkan fungsi sigmoid (S-shaped) untuk menghitung probabilitas suatu data termasuk ke kelas positif (1) atau negatif (0).  
-Beberapa metrik evaluasi utama meliputi:
+Klasifikasi biner adalah salah satu teknik pembelajaran mesin yang diawasi, mirip dengan regresi. Namun, alih-alih memprediksi nilai numerik, model klasifikasi biner memprediksi salah satu dari dua kelas (misalnya, 0 atau 1). Proses pelatihannya melibatkan beberapa langkah iteratif, yaitu:
+1. Melatih model dengan data latih.
+2. Memvalidasi model menggunakan subset data yang ditahan.
+3. Mengevaluasi performa model untuk memastikan prediksi yang dihasilkan handal.
 
-1. **Accuracy**: Rasio prediksi benar terhadap keseluruhan data uji.  
-2. **Recall (True Positive Rate)**: Seberapa baik model menangkap semua kasus positif yang sebenarnya (TP / (TP + FN)).  
-3. **Precision**: Persentase prediksi positif yang benar-benar positif (TP / (TP + FP)).  
-4. **F1-Score**: Ukuran keseluruhan yang menyeimbangkan recall dan precision (rumus: 2 × (Precision × Recall) ÷ (Precision + Recall)).  
-5. **AUC (Area Under the Curve)**: Menggambarkan area di bawah kurva ROC (TPR vs. FPR) pada berbagai nilai threshold. Semakin tinggi AUC (mendekati 1.0), semakin baik model membedakan antara kelas positif dan negatif.
+---
 
-Dengan demikian, sebuah model binary classification yang baik tidak hanya mengedepankan akurasi yang tinggi, tetapi juga memperhatikan keandalan dalam menangkap kasus positif serta akurasi dalam menebak positif secara tepat.
-## Contoh Kasus
+# Bab 2: Dasar Teori Klasifikasi Biner
 
-Misalkan kita memiliki dataset pasien dengan fitur-fitur seperti usia, tekanan darah, kadar kolesterol, dan riwayat kesehatan lainnya. Tujuan kita adalah memprediksi apakah seorang pasien memiliki penyakit jantung (1) atau tidak (0).
+Model klasifikasi biner dirancang untuk memprediksi satu dari dua kemungkinan label. Contoh klasiknya adalah memprediksi "benar" atau "salah" (1 atau 0). Pada dasarnya, model menghitung probabilitas bahwa suatu pengamatan jatuh ke kelas tertentu:
+- P(y=1 | x) menunjukkan probabilitas suatu objek masuk ke kelas 1.
+- P(y=0 | x) = 1 – P(y=1 | x).
 
-1. **Accuracy**: Jika dari 100 pasien, model memprediksi 90 pasien dengan benar (baik positif maupun negatif), maka akurasinya adalah 90%.
-2. **Recall**: Dari 50 pasien yang benar-benar memiliki penyakit jantung, jika model berhasil mengidentifikasi 45 di antaranya, recall-nya adalah 90%.
-3. **Precision**: Jika model memprediksi 50 pasien memiliki penyakit jantung, dan 45 di antaranya benar-benar memiliki penyakit jantung, precision-nya adalah 90%.
-4. **F1-Score**: Menggunakan nilai precision dan recall yang sama (90%), F1-Score-nya adalah 0.90.
-5. **AUC**: Jika AUC model adalah 0.95, ini menunjukkan bahwa model sangat baik dalam membedakan antara pasien yang memiliki dan tidak memiliki penyakit jantung.
+## Regresi Logistik
+Salah satu algoritma populer untuk klasifikasi biner adalah regresi logistik. Meskipun namanya mengandung kata “regresi”, teknik ini digunakan untuk klasifikasi. Algoritma ini memanfaatkan fungsi sigmoid yang berbentuk kurva S, memetakan nilai masukan (x) ke rentang [0,1]. Nilai probabilitas di atas atau sama dengan ambang batas (sering kali 0,5) dikategorikan sebagai 1 (benar), sedangkan di bawah ambang tersebut dikategorikan sebagai 0 (salah).
 
-Dengan contoh ini, kita dapat melihat bagaimana metrik-metrik tersebut digunakan untuk mengevaluasi kinerja model binary classification dalam konteks medis.
+---
+
+# Bab 3: Contoh Sederhana
+
+Misalkan ingin memprediksi apakah seseorang menderita diabetes hanya berdasarkan satu fitur, yaitu kadar glukosa darah. Berikut contoh data:
+
+| Glukosa Darah (x) | Diabetes? (y) |
+| ----------------- | ------------- |
+| 67                | 0             |
+| 103               | 1             |
+| 114               | 1             |
+| 72                | 0             |
+| 116               | 1             |
+| 65                | 0             |
+
+Setelah model dilatih, fungsi sigmoid yang dihasilkan dapat memperkirakan probabilitas y=1 untuk setiap nilai x. Model memprediksi 1 jika probabilitas ≥ 0,5, atau 0 jika sebaliknya.
+
+---
+
+# Bab 4: Pelatihan dan Validasi
+
+Untuk menilai performa model, dibutuhkan data terpisah yang disebut data validasi. Contoh data validasi:
+
+| Glukosa Darah (x) | Diabetes? (y) |
+| ----------------- | ------------- |
+| 66                | 0             |
+| 107               | 1             |
+| 112               | 1             |
+| 71                | 0             |
+| 87                | 1             |
+| 89                | 1             |
+
+Model menghasilkan probabilitas untuk setiap titik data. Setelah dibandingkan dengan ambang batas, diperoleh label prediksi. Dengan membandingkan label prediksi (ŷ) dan label asli (y), kebenaran model dapat dihitung melalui berbagai metrik.
+
+---
+
+# Bab 5: Evaluasi Model Klasifikasi Biner
+
+## 1. Matriks Kebingungan (Confusion Matrix)
+Matriks kebingungan menampilkan empat kemungkinan hasil:
+- True Negative (TN): Prediksi 0, sebenarnya 0.
+- False Positive (FP): Prediksi 1, sebenarnya 0.
+- False Negative (FN): Prediksi 0, sebenarnya 1.
+- True Positive (TP): Prediksi 1, sebenarnya 1.
+
+## 2. Akurasi
+Mengukur persentase total prediksi yang benar:
+(TP + TN) / (TP + TN + FP + FN).
+
+## 3. Pengenalan (Recall)
+Mengukur seberapa banyak kasus positif yang berhasil ditemukan model:
+TP / (TP + FN).
+
+## 4. Presisi (Precision)
+Mengukur proporsi prediksi positif yang benar-benar positif:
+TP / (TP + FP).
+
+## 5. Skor F1
+Kombinasi menyeluruh presisi dan pengenalan:
+(2 × Presisi × Pengenalan) / (Presisi + Pengenalan).
+
+## 6. Area Under Curve (AUC)
+Mengukur kualitas model dengan memplot kurva ROC (Receiver Operating Characteristic). Nilai AUC yang mendekati 1 menandakan model berkinerja sangat baik.
+
+---
+
+# Bab 6: Penutup
+
+Klasifikasi biner menawarkan pendekatan efektif untuk memprediksi dua kelas berbeda. Melalui proses pelatihan, validasi, dan evaluasi, model yang dihasilkan dapat memberikan prediksi andal bagi berbagai kasus, seperti mendeteksi penyakit atau memfilter email spam. Pemahaman konsep, algoritma, dan metrik evaluasi yang tepat sangat penting guna memastikan kualitas prediksi yang dihasilkan.
